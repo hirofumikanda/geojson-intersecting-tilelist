@@ -4,7 +4,7 @@ import csv
 from shapely.geometry import box
 from shapely.strtree import STRtree
 
-gdf = gpd.read_file("japan.geojson")
+gdf = gpd.read_file("target.geojson")
 if gdf.crs is None or gdf.crs.to_epsg() != 4326:
     gdf = gdf.to_crs("EPSG:4326")
 geoms = [geom for geom in gdf.geometry.values if geom is not None and not geom.is_empty]
